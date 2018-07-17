@@ -1,0 +1,33 @@
+{
+  "name": "chatroom",
+  "version": "1.0.0",
+  "description": "A simple chat room application for studying sockets and http.",
+  "main": "server/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KueZie/Chat-Room.git"
+  },
+  "keywords": [
+    "http",
+    "socket.io",
+    "chat",
+    "chatroom"
+  ],
+  "author": "Hunter Goram",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KueZie/Chat-Room/issues"
+  },
+  "homepage": "https://github.com/KueZie/Chat-Room#readme",
+  "dependencies": {
+    "assert": "^1.4.1",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "http": "0.0.0",
+    "path": "^0.12.7",
+    "socket.io": "^2.1.1"
+  }
+}
