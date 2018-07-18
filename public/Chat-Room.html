@@ -12,19 +12,19 @@
     <body>
         <div id="app">
 
-            <div id="message-container" class="boxed box round padding-small">
-                
-            </div>
+            <div id="message-container" class="boxed box round padding-small"></div>
             <div id="message-box" class="boxed box round padding-small">
                 <textarea placeholder="Type message here..." id="msg-node"></textarea>
             </div>
+            <input type="submit" onclick="submitMsg()" class="box">
 
         </div>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.dev.js"></script>
         <script src="./vue.min.js"></script>
-        <script src="./main.js"></script>
+        <script src="./pop-up.js"></script>
         <script src="./message.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+        <script src="./main.js"></script>
     </body>
 </html>

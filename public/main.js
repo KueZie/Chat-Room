@@ -1,26 +1,35 @@
 const msgNode = document.querySelector('#msg-node');
 const msgContainer = document.querySelector('#message-container');
+const app = document.querySelector('#app');
+let userName;
 const socket = io();
 
-
-
-function submitMsg(data) {
+function submitMsg() {
+    if (!userName) {
+        userName = msgNode.value;
+        throwLocalMsg(`Name set to ${msgNode.value}.`);
+        return;
+    }
     data = {
-        content: data,
-        author: socket.id
+        content: msgNode.value,
+        author: userName
     }
     socket.emit('message', data);
 }
 
-msgNode.addEventListener('keypress', e => {
-    if (e.key === 'Enter') {
-        e.preventDefault();
-        submitMsg(msgNode.value);
-        msgNode.value = '';
-    }
-});
+function throwLocalMsg(msg) {
+
+    msgContainer.innerHTML += `
+    
+        <p>CONSOLE: ${msg}</p>
+    
+    `;
+
+}
 
 socket.on('message', data => {
     const msg = new Message(data.author, data.content);
     msgContainer.innerHTML += msg.format();
 });
+
+throwLocalMsg('Your first message will define your name!');
